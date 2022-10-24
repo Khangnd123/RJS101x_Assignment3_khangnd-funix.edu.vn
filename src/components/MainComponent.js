@@ -9,9 +9,10 @@ import Nhanvien from "./nhanvien";
 import Pban from "./Phongban";
 import Bangluong from "./Bangluong";
 import Timkiem from "./Timkiem";
-import { Breadcrumb, BreadcrumbItem } from "reactstrap";
+//import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 
-import { HashRouter, Switch, Route, Redirect, Link } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import ThemNhanvien from "./ThemNhanvien";
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -27,70 +28,14 @@ class Main extends Component {
   }
 
   handleChange() {
-    this.setState({ value: document.getElementById("hhh").value });
-    this.setState({ valueOp: document.getElementById("opv").value });
+    // this.setState({ value: document.getElementById("hhh").value });
+    //this.setState({ valueOp: document.getElementById("opv").value });
   }
   handleChangeBluong() {
     this.setState({ valueBl: document.getElementById("tlv").value });
   }
 
   render() {
-    function XepTheo({ a }) {
-      if (a === "") {
-        return <div>Không có giá trị sắp xếp</div>;
-      } else if (a === "id") {
-        return <div>Mã nhân viên</div>;
-      } else if (a === "annualLeave") {
-        return <div>AnnualLeave</div>;
-      } else if (a === "overTime") {
-        return <div>OverTime</div>;
-      } else {
-        return <div>Không xác định</div>;
-      }
-    }
-    const Fim = () => {
-      return (
-        <div className="container">
-          <div className="row">
-            <Breadcrumb>
-              <BreadcrumbItem>
-                <Link to="/home">Home</Link>
-              </BreadcrumbItem>
-
-              <BreadcrumbItem active>Tìm kiếm</BreadcrumbItem>
-            </Breadcrumb>
-            <div className="col-12">
-              <h3>Tìm kiếm </h3>
-              <hr></hr>
-            </div>
-          </div>
-          <div>
-            <label>
-              <select id="opv">
-                <option value="">Sắp xếp theo</option>
-                <option value="id">mã nhân viên</option>
-                <option value="annualLeave">annualLeave</option>
-                <option value="overTime">overTime</option>
-              </select>
-            </label>
-            <XepTheo a={this.state.valueOp} />
-
-            <label>
-              <input type="text" id="hhh" />
-            </label>
-            <input type="submit" value="Submit" onClick={this.handleChange} />
-          </div>
-
-          <Timkiem
-            opVa={this.state.valueOp}
-            value={this.state.value}
-            Tvien={this.state.lisT.filter(
-              (vien) => vien.name.toLowerCase().indexOf(this.state.value) !== -1
-            )}
-          />
-        </div>
-      );
-    };
     const HomePageNV = () => {
       return <Nhanvien />;
     };
@@ -114,7 +59,7 @@ class Main extends Component {
         <HashRouter>
           <Switch>
             <Route path="/home" component={HomePageNV}></Route>
-
+            <Route path="/them" component={ThemNhanvien}></Route>
             <Route
               exact
               path="/menu"
@@ -136,7 +81,10 @@ class Main extends Component {
                 />
               )}
             ></Route>
-            <Route path="/timkiem" component={Fim}></Route>
+            <Route
+              path="/timkiem"
+              component={() => <Timkiem lisT={this.state.lisT} />}
+            ></Route>
             <Redirect to="/home" />
           </Switch>
         </HashRouter>

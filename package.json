@@ -1,14 +1,21 @@
 {
-  "name": "my-app",
+  "name": "react-redux-demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-redux": "^8.0.4",
+    "react-redux-form": "^1.16.14",
+    "react-router": "^5.3.3",
+    "react-router-dom": "^5.3.3",
     "react-scripts": "5.0.1",
+    "reactstrap": "^9.1.4",
+    "redux": "^4.2.0",
+    "redux-form": "^8.3.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
