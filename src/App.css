@@ -1,0 +1,64 @@
+.row-header {
+  margin: 0px auto;
+  padding: 0px auto;
+}
+
+.row-content {
+  margin: 0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height: 400px;
+}
+
+.footer {
+  background-color: #d1c4e9;
+  margin: 0px auto;
+  padding: 20px 0px 20px 0px;
+}
+.jumbotron {
+  padding: 70px 30px 70px 30px;
+  margin: 0px auto;
+  background: #9575cd;
+  color: floralwhite;
+}
+
+address {
+  font-size: 80%;
+  margin: 0px;
+  color: #0f0f0f;
+}
+
+.navbar-dark {
+  background-color: #512da8;
+}
+#img_png {
+  max-width: 100%;
+  max-height: 100%;
+}
+.list-unstyled-header li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 2%;
+
+  font-size: 20px;
+}
+li a {
+  text-decoration: none;
+}
+ul {
+  /* định nghĩa một list / tức danh sách */
+  margin: 0; /* thụt lề bằng 0 */
+  padding: 0; /* vùng đệm để đẩy thành phần chứa bên trong thụt vô bằng 0 */
+}
+.header {
+  background-color: rgb(42, 42, 187);
+  min-height: 35px;
+}
+
+.nav-Link {
+  padding: 10px;
+}
+
+.ml {
+  float: right;
+}
